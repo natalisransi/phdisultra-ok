@@ -6,16 +6,11 @@ use yii\helpers\Html;
 /* @var $model common\models\Pekerjaan */
 
 $this->title = 'Update Pekerjaan: ' . $model->pekerjaan_id;
-$this->params['breadcrumbs'][] = ['label' => 'Pekerjaans', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->pekerjaan_id, 'url' => ['view', 'id' => $model->pekerjaan_id]];
+$this->params['breadcrumbs'][] = ['label' => 'Data Pekerjaan', 'url' => ['index']];
 $this->params['breadcrumbs'][] = 'Update';
+
+echo $this->render('_form', [
+	'model' => $model,
+]);
+
 ?>
-<div class="pekerjaan-update">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
-</div>

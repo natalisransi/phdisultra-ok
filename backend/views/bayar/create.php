@@ -6,16 +6,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Bayar */
 
-$this->title = 'Create Bayar';
-$this->params['breadcrumbs'][] = ['label' => 'Bayars', 'url' => ['index']];
+$this->title = 'Tambah Pembayaran';
+$this->params['breadcrumbs'][] = ['label' => 'Data Bayar', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+echo $this->render('_form', [
+	'model' => $model,
+]);
+
 ?>
-<div class="bayar-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
-</div>
