@@ -6,16 +6,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Anggota */
 
-$this->title = 'Create Anggota';
-$this->params['breadcrumbs'][] = ['label' => 'Anggotas', 'url' => ['index']];
+$this->title = 'Tambah Anggota';
+$this->params['breadcrumbs'][] = ['label' => 'Data Anggota', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+echo $this->render('_form', [
+	'model' => $model,
+]);
+
 ?>
-<div class="anggota-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
-</div>

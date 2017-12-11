@@ -6,16 +6,11 @@ use yii\helpers\Html;
 /* @var $model common\models\Anggota */
 
 $this->title = 'Update Anggota: ' . $model->anggota_id;
-$this->params['breadcrumbs'][] = ['label' => 'Anggotas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->anggota_id, 'url' => ['view', 'id' => $model->anggota_id]];
+$this->params['breadcrumbs'][] = ['label' => 'Data Anggota', 'url' => ['index']];
 $this->params['breadcrumbs'][] = 'Update';
+
+echo $this->render('_form', [
+	'model' => $model,
+]);
+
 ?>
-<div class="anggota-update">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
-</div>

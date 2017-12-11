@@ -6,16 +6,10 @@ use yii\helpers\Html;
 /* @var $model common\models\Family */
 
 $this->title = 'Update Family: ' . $model->family_id;
-$this->params['breadcrumbs'][] = ['label' => 'Families', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->family_id, 'url' => ['view', 'id' => $model->family_id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = ['label' => 'Data Anggota Keluarga', 'url' => ['index']];
+
+echo $this->render('_form', [
+	'model' => $model,
+]);
+
 ?>
-<div class="family-update">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
-</div>

@@ -6,16 +6,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\FamilyKat */
 
-$this->title = 'Create Family Kat';
-$this->params['breadcrumbs'][] = ['label' => 'Family Kats', 'url' => ['index']];
+$this->title = 'Tambah Kategori Family';
+$this->params['breadcrumbs'][] = ['label' => 'Data Kategori Anggota Keluarga', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+echo $this->render('_form', [
+	'model' => $model,
+]);
+
 ?>
-<div class="family-kat-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
-</div>
