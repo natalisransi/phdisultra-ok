@@ -20,13 +20,48 @@ $this->registerJs('$(\'.profile\').initial();');
 				<?php
 					$itemsLeft = [
 						['label' => '<i class="fa fa-home"></i> Beranda', 'url' => ['/site/index'],],
-						['label' => 'Data Pendidikan', 'url' => ['/pendidikan/index']],
-						['label' => 'Data Pekerjaan', 'url' => ['/pekerjaan/index']],
-						['label' => 'Data Kat. Family', 'url' => ['/family-kat/index']],
-						['label' => 'Anggota', 'url' => ['/anggota/index']],
-						['label' => 'Family', 'url' => ['/family/index']],
+						[
+                                                    'label' => 'Master Data Pokok',
+                                                    'icon' => 'credit-card',
+                                                    'url' => '#',
+                                                    'items' => [
+                            
+                                                                ['label' => 'Data Pendidikan', 'url' => ['/pendidikan/index']],
+                                                                ['label' => 'Data Pekerjaan', 'url' => ['/pekerjaan/index']],
+                                                                ['label' => 'Data Kat. Family', 'url' => ['/family-kat/index']],
+                                                                ],
+                                                    ],
+                                            
+                                             [
+                                                'label' => 'Master Data Wilayah',
+                                                'icon' => 'credit-card',
+                                                'url' => '#',
+                                                'items' => [
+                                                            ['label' => 'Provinsi', 'icon' => 'check-circle', 'url' => ['/provinsi'],],
+                                                            ['label' => 'Kabupaten', 'icon' => 'check-circle', 'url' => ['/kabupaten'],],
+                                                            ['label' => 'Kecamatan', 'icon' => 'check-circle', 'url' => ['/kecamatan'],],
+                                                            ['label' => 'Kelurahan/Desa', 'icon' => 'check-circle', 'url' => ['/kelurahan-desa'],],
+                                                            
+                                                            ],
+                                               ],
+                                            
+                                            [
+                                                'label' => 'Kelola Keanggotaan',
+                                                'icon' => 'credit-card',
+                                                'url' => '#',
+                                                'items' => [
+                                                            ['label' => 'Anggota', 'url' => ['/anggota/index']],
+                                                            ['label' => 'Family', 'url' => ['/family/index']],
+                                                            ['label' => 'Alamat', 'url' => ['/anggota-has-kelurahan-desa/index']], 
+                                                            ],
+                                               ],
+                                                
 						['label' => 'Kelola Pembayaran', 'url' => ['/bayar/index']],
-					];
+                                            
+                                           
+                                            
+                                            
+                                            ];
 					echo Nav::widget([
 						'options' => ['class' => 'navbar-nav'],
 						'encodeLabels' => false,
