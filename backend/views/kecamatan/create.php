@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Kecamatan */
 
-$this->title = 'Create Kecamatan';
-$this->params['breadcrumbs'][] = ['label' => 'Kecamatans', 'url' => ['index']];
+$this->title = 'Tambah Kecamatan';
+$this->params['breadcrumbs'][] = ['label' => 'Kecamatan', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="kecamatan-create">

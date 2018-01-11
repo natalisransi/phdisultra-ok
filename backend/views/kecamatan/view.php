@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Kecamatan */
 
-$this->title = $model->kecamatan_id;
-$this->params['breadcrumbs'][] = ['label' => 'Kecamatans', 'url' => ['index']];
+$this->title = $model->kecamatan_nama;
+$this->params['breadcrumbs'][] = ['label' => 'Kecamatan', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="kecamatan-view">
@@ -19,17 +19,18 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Delete', ['delete', 'id' => $model->kecamatan_id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Anda Yakin Ingin Menghapus Data?',
                 'method' => 'post',
             ],
         ]) ?>
+          <?= Html::a('Kembali', ['/kecamatan/index'], ['class'=>'btn btn-warning']) ?>
     </p>
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'kecamatan_id',
-            'kabupaten_id',
+            'kabupaten.kabupaten_nama',
             'kecamatan_kode',
             'kecamatan_nama',
         ],

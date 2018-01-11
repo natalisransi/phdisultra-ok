@@ -45,10 +45,10 @@ class Kabupaten extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'kabupaten_id' => 'Kabupaten ID',
-            'provinsi_id' => 'Provinsi ID',
-            'kabupaten_kode' => 'Kabupaten Kode',
-            'kabupaten_nama' => 'Kabupaten Nama',
+            'kabupaten_id' => 'ID Kabupaten ',
+            'provinsi_id' => 'ID Provinsi ',
+            'kabupaten_kode' => 'Kode Kabupaten ',
+            'kabupaten_nama' => 'Nama Kabupaten ',
         ];
     }
 

@@ -40,9 +40,9 @@ class Provinsi extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'provinsi_id' => 'Provinsi ID',
-            'provinsi_kode' => 'Provinsi Kode',
-            'provinsi_nama' => 'Provinsi Nama',
+            'provinsi_id' => 'ID Provinsi',
+            'provinsi_kode' => 'Kode Provinsi ',
+            'provinsi_nama' => 'Nama Provinsi ',
         ];
     }
 

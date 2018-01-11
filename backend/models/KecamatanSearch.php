@@ -18,8 +18,8 @@ class KecamatanSearch extends Kecamatan
     public function rules()
     {
         return [
-            [['kecamatan_id', 'kabupaten_id'], 'integer'],
-            [['kecamatan_kode', 'kecamatan_nama'], 'safe'],
+            [['kecamatan_id'], 'integer'],
+            [['kecamatan_kode', 'kecamatan_nama' , 'kabupaten_id'], 'safe'],
         ];
     }
 
@@ -57,14 +57,18 @@ class KecamatanSearch extends Kecamatan
             return $dataProvider;
         }
 
+        $query->joinWith('kabupaten');
         // grid filtering conditions
         $query->andFilterWhere([
             'kecamatan_id' => $this->kecamatan_id,
-            'kabupaten_id' => $this->kabupaten_id,
+          //  'kabupaten_id' => $this->kabupaten_id,
         ]);
 
         $query->andFilterWhere(['like', 'kecamatan_kode', $this->kecamatan_kode])
-            ->andFilterWhere(['like', 'kecamatan_nama', $this->kecamatan_nama]);
+            ->andFilterWhere(['like', 'kecamatan_nama', $this->kecamatan_nama])
+            ->andFilterWhere(['like', 'kabupaten.kabupaten_nama', $this->kabupaten_id])
+
+            ;
 
         return $dataProvider;
     }

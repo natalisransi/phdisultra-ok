@@ -28,6 +28,7 @@ class Anggota extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
     public static function tableName()
     {
         return 'anggota';
@@ -43,7 +44,9 @@ class Anggota extends \yii\db\ActiveRecord
             [['pekerjaan_id', 'pendidikan_id'], 'integer'],
             [['jenis_kelamin'], 'string'],
             [['anggota_nama'], 'string', 'max' => 245],
-            [['anggota_t4_lahir', 'foto'], 'string', 'max' => 45],
+            [['anggota_t4_lahir'], 'string', 'max' => 45],
+            [['foto'], 'string', 'max' => 45],
+            [['foto'], 'file', 'extensions' => 'jpg, gif, png'],
             [['pekerjaan_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pekerjaan::className(), 'targetAttribute' => ['pekerjaan_id' => 'pekerjaan_id']],
             [['pendidikan_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pendidikan::className(), 'targetAttribute' => ['pendidikan_id' => 'pendidikan_id']],
         ];
@@ -61,7 +64,7 @@ class Anggota extends \yii\db\ActiveRecord
             'anggota_tgl_lahir' => 'Tgl Lahir',
             'pekerjaan_id' => 'Pekerjaan ',
             'pendidikan_id' => 'Pendidikan ',
-            'foto' => 'Foto',
+            'file' => 'Foto',
             'jenis_kelamin' => 'Jenis Kelamin',
         ];
     }

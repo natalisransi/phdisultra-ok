@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Kecamatan */
 
-$this->title = 'Update Kecamatan: ' . $model->kecamatan_id;
-$this->params['breadcrumbs'][] = ['label' => 'Kecamatans', 'url' => ['index']];
+$this->title = 'Ubah Kecamatan: ' . $model->kecamatan_nama;
+$this->params['breadcrumbs'][] = ['label' => 'Kecamatan', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->kecamatan_id, 'url' => ['view', 'id' => $model->kecamatan_id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
