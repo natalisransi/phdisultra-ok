@@ -7,10 +7,11 @@ use common\models\Pekerjaan;
 use common\models\Pendidikan;
 use kartik\select2\Select2;
 use kartik\date\DatePicker;
+use yii\web\UploadedFile;
 /* @var $this yii\web\View */
 /* @var $model common\models\Anggota */
 /* @var $form yii\widgets\ActiveForm */
-$form = ActiveForm::begin(['type' => ActiveForm::TYPE_HORIZONTAL]);
+$form = ActiveForm::begin(['type' => ActiveForm::TYPE_HORIZONTAL, 'options'=>['enctype'=>'multipart/form-data']]);
 ?>
 <div class="box box-default">
     <div class="box-header with-border">
@@ -33,6 +34,7 @@ $form = ActiveForm::begin(['type' => ActiveForm::TYPE_HORIZONTAL]);
                     'options' => ['placeholder' => 'Tanggal Lahir...'],
                     'pluginOptions' => [
                         'format' => 'yyyy-mm-dd',
+                        'autoclose'=>true,
                         'todayHighlight' => true
                     ],
             ]);
@@ -47,10 +49,10 @@ $form = ActiveForm::begin(['type' => ActiveForm::TYPE_HORIZONTAL]);
                 'allowClear' => true
                 ],
             ]);
-      
+
         ?>
-      
-        <?= $form->field($model, 'pendidikan_id')->widget(Select2::classname(), [            
+
+        <?= $form->field($model, 'pendidikan_id')->widget(Select2::classname(), [
             'data' => ArrayHelper::map(Pendidikan::find()->all(),'pendidikan_id','pendidikan_nama'),
             'language' => 'en',
            // 'tabindex' => false,
@@ -59,10 +61,18 @@ $form = ActiveForm::begin(['type' => ActiveForm::TYPE_HORIZONTAL]);
                 'allowClear' => true
                 ],
             ]);
-      
+
         ?>
 
-        <?= $form->field($model, 'foto')->textInput(['maxlength' => true]) ?>
+
+        <?= $form->field($model, 'foto')-> fileInput() ?>
+
+       <?php
+       if($model->foto){
+          echo '<p><img src ="'.\yii::$app->request->BaseUrl.'/'.$model->foto.'" width="90px"></p>' ;
+          echo Html::a('Hapus Foto',['anggota/foto','id'=>$model->anggota_id], ['class'=>'btn btn-danger']).'<p>';
+       }
+        ?>
 
         <?= $form->field($model, 'jenis_kelamin')->dropDownList([ 'L' => 'L', 'P' => 'P', ], ['prompt' => '']) ?>
     </div>

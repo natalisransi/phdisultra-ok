@@ -45,10 +45,10 @@ class Kecamatan extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'kecamatan_id' => 'Kecamatan ID',
-            'kabupaten_id' => 'Kabupaten ID',
-            'kecamatan_kode' => 'Kecamatan Kode',
-            'kecamatan_nama' => 'Kecamatan Nama',
+            'kecamatan_id' => 'ID Kecamatan ',
+            'kabupaten_id' => 'Kabupaten ',
+            'kecamatan_kode' => 'Kode Kecamatan ',
+            'kecamatan_nama' => 'Nama Kecamatan ',
         ];
     }
 

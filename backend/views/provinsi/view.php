@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Provinsi */
 
-$this->title = $model->provinsi_id;
-$this->params['breadcrumbs'][] = ['label' => 'Provinsis', 'url' => ['index']];
+$this->title = $model->provinsi_nama;
+$this->params['breadcrumbs'][] = ['label' => 'Provinsi', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="provinsi-view">
@@ -23,6 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+          <?= Html::a('Kembali', ['/provinsi/index'], ['class'=>'btn btn-warning']) ?>
     </p>
 
     <?= DetailView::widget([

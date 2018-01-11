@@ -18,8 +18,8 @@ class KabupatenSearch extends Kabupaten
     public function rules()
     {
         return [
-            [['kabupaten_id', 'provinsi_id'], 'integer'],
-            [['kabupaten_kode', 'kabupaten_nama'], 'safe'],
+            [['kabupaten_id'], 'integer'],
+            [['kabupaten_kode', 'kabupaten_nama', 'provinsi_id'], 'safe'],
         ];
     }
 
@@ -57,14 +57,18 @@ class KabupatenSearch extends Kabupaten
             return $dataProvider;
         }
 
+
+        $query->joinWith('provinsi');  // Modelnya
         // grid filtering conditions
         $query->andFilterWhere([
             'kabupaten_id' => $this->kabupaten_id,
-            'provinsi_id' => $this->provinsi_id,
+        //    'provinsi_id' => $this->provinsi_id,
         ]);
 
         $query->andFilterWhere(['like', 'kabupaten_kode', $this->kabupaten_kode])
-            ->andFilterWhere(['like', 'kabupaten_nama', $this->kabupaten_nama]);
+            ->andFilterWhere(['like', 'kabupaten_nama', $this->kabupaten_nama])
+            ->andFilterWhere(['like', 'provinsi.provinsi_nama', $this->provinsi_id])
+            ;
 
         return $dataProvider;
     }
